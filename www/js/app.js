@@ -24,23 +24,25 @@ app.run(function($ionicPlatform) {
 });
 app.controller('TodoCtrl', function($scope, $cordovaGeolocation) {
   console.log('test');
-  var posOptions = {enableHighAccuracy: false};
-
-  $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
-      $scope.task = {}
-      var lat  = position.coords.latitude
-      var long = position.coords.longitude
-      console.log(lat + '   ' + long)
-      $scope.task.lat = lat
-      $scope.task.long = long
-   }, function(err) {
-      console.log(err)
-   })
+  // var posOptions = {enableHighAccuracy: false};
+  // $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
+  //     $scope.task = {}
+  //     var lat  = position.coords.latitude
+  //     var long = position.coords.longitude
+  //     console.log(lat + '   ' + long)
+  //     lat = lat
+  //     long = long
+      
+  //  }, function(err) {
+  //     console.log(err)
+  //  })
   $scope.createTask = function (task) {
     console.log('test1');
   }
 });
-
+app.controller('mapinit', function($scope, $cordovaGeolocation) {
+  app.cordovaGeolocation1 =  $cordovaGeolocation;
+});
 
 
 
